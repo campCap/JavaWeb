@@ -1,4 +1,4 @@
-package com.newlec.javaweb.controller;
+package com.newlec.javaweb.controller.customer;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlecture.javaweb.entity.Notice;
 
-@WebServlet("/notice")
-public class NoticeController extends HttpServlet{
+@WebServlet("/customer/notice-list")
+public class NoticeListController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -73,7 +73,7 @@ public class NoticeController extends HttpServlet{
 		}
 		  
 	request.setAttribute("list", list);
-	request.getRequestDispatcher("notice.jsp").forward(request, response);
+	request.getRequestDispatcher("/WEB-INF/views/customer/notice/list.jsp").forward(request, response);
 	}
 
 }

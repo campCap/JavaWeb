@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
-encoding//WebContent/notice.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/admin/notice/list.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/customer/notice/list.jsp=UTF-8

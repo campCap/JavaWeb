@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+a{
+	color: #979797;
+	text-decoration: none;
+}
+
+
+/* -----------------------reset----- */
+.hidden{
+	/* visibility:hidden; */
+	display: none;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+.content-container {
+	margin: auto;
+	height:100%;
+	min-height:inherit;	
+	width:960px;
+}
+
+body{
+	font-family:돋음, Arial, sans-serif;
+	font-size: 11px;
+	color:#979797;
+}
+
+
+/* ---------------------------------------------------- */
+.btn{
+	display: inline-block;
+	border: 0px;
+	cursor: pointer;
+	overflow: hidden;
+	
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	
+	padding: 3px 8px;
+	color: white;
+	font-weight: bold;
+}
+
+.btn-img{
+	display: inline-block;
+	border: 0px;
+	text-indent: -999px;/* 왼쪽으로 밈 (들여쓰기) */
+	cursor: pointer;
+	overflow: hidden;
+	
+	background-image: none;
+	border: 1px solid transparent;
+	/* border-radius: 4px; */
+	text-indent: -999px;/* 왼쪽으로 밈 (들여쓰기) */	
+}
+
+.btn-default{
+	background-color: #759d2a;
+	border-color: #608618;
+}
+
+	.btn-default:hover{
+		text-decoration:none;
+		background:-webkit-gradient(radial, 171 104, 0, 220 -42, 280, from(#000000), to(#0029FF));
+		border-color: #608618;
+	}
+
+
+	.btn-search{
+		width: 31px;
+		height: 25px;
+		border:0px;
+		border-left:  1px solid #8CBA34;
+		background: url("../images/btn-zoom.png") no-repeat;
+	}
+	
+	.btn-cancel{
+		width: 64px;
+		height: 23px;
+		background: url("../images/btn-cancel.png");
+	}
+/* --------------hr-list------------------------------ */
+
+.hr-list{
+		display: inline-block;
+	}
+	
+	.hr-list ul{
+		overflow:auto;
+	}
+	
+		.hr-list li{
+			float: left;
+		}
+		/* li부모의 첫번째 자식 태그 */
+		.hr-list li:first-child{
+			padding-left: 0px;
+			background: none;
+		}
+			
+/* ------------------------------ */
+#header{
+	height: 70px;
+}
+
+#header .content-container{
+	position:relative;
+}
+
+#header section >*,
+#logo{
+	position: absolute;
+}
+
+	#logo{
+		display: inline-block;
+		top: 23px;
+		vertical-align: baseline;
+		font-size:0px;
+		background-color: red;
+	}
+
+#main-menu{
+	top: 27px;
+	left: 200px;
+}
+
+
+.main-menu li{
+	padding-left: 24px;
+	background: url("../images/bg-main-menu-vsp.png") no-repeat 13px center;
+}
+			
+	.main-menu li:last-child a{
+		color: #ff6a00;
+	}
+	
+	.main-menu a{
+		font-family: 맑은 고딕, sans-serif;
+		font-size: 15px;
+		font-weight: bold;
+		color: #000000;
+	}
+/* -------------------------------- */
+
+#search-form{
+	width: 308px;
+	height: 25px;
+	border: 5px solid #8cba34;
+	top: 21px;
+	left: 468px;
+}
+/* --------------------------------- */
+
+#member-menu{
+	top: 20px;
+	right: 0px;
+		
+}
+
+	.member-menu li{
+		padding-left: 9px;
+		background: url("../images/bg-member-menu-sp.png") no-repeat 5px center;
+	}
+	
+	.member-menu a{
+		font-family: 맑은 고딕, 고딕, sans-serif;
+		font-size: 10px;
+		font-weight: bold;
+		color: #979797;
+	}
+
+#customer-menu{
+	right:0px;
+	top: 40px;
+}
+
+		
+		
+#visual {
+	height: 171px;
+	background: #313131 url("../images/bg-visual.png") center;
+	border-top: solid 3px #8cba34;
+}
+	#visual .content-container{
+		background: #313131 url("../images/customer/visual.png") no-repeat center;
+	}
+
+/* -------보디 스타일 왕자굳------------------------------------ */
+#body {
+	border-top: solid 5px #8cba34;
+	margin-top:1px;
+	min-height: 300px;
+}
+	#body .content-container{
+  	 background:url("../images/bg-body.png") repeat-y left;
+	}
+	#aside {
+		float: left;
+		min-height: inherit;
+		width: 205px;
+		background:url("../images/bg-aside-title.png") no-repeat left top;
+		
+	}
+	#main {
+		min-height: inherit;
+		float: left;
+		padding-left:35px;
+		padding-top:45px;
+		width:755px;
+		box-sizing: border-box;
+	}
+	/* 매인의 막내동생 */
+
+
+/* --------------footer style-------------------------- */	
+#footer {
+	height: 100px;
+	background: #313131;
+}
+#floating{
+	position: fixed;
+	width:100%;
+	height: 50px;
+	background: lime;
+	left: 0px;
+	top: 0px 
+}
+	#floating div{
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		background: fuchsia;
+		/* top: 10px;
+		left: 10px */
+	}
+
