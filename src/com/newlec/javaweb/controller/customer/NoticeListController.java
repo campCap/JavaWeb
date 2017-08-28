@@ -30,7 +30,7 @@ public class NoticeListController extends HttpServlet{
 		
 		List<Notice> list = null;
 		
-		String sql = "select * from Notice where title like ? or content like ?";
+		String sql = "select * from Notice where title like ?";
 		
 		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		
@@ -44,7 +44,6 @@ public class NoticeListController extends HttpServlet{
 		      // 실행
 		      PreparedStatement st = con.prepareStatement(sql);
 		      st.setString(1, "%"+title+"%");
-		      st.setString(2, "%"+title+"%");
 		
 		      // 결과 가져오기
 		      ResultSet rs = st.executeQuery();
@@ -58,6 +57,7 @@ public class NoticeListController extends HttpServlet{
 		         n.setId(rs.getString("ID"));
 		         n.setTitle(rs.getString("TITLE"));
 		         n.setContent(rs.getString("content"));
+		         n.setRegDate(rs.getDate("regDate"));
 		         //..
 		         
 		         list.add(n);
@@ -71,7 +71,6 @@ public class NoticeListController extends HttpServlet{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		  
 	request.setAttribute("list", list);
 	request.getRequestDispatcher("/WEB-INF/views/customer/notice/list.jsp").forward(request, response);
 	}

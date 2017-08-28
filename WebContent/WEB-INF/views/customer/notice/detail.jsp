@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -11,8 +12,8 @@
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
-
-	<jsp:include page="../../inc/header.jsp"/>
+	<!-- 헤더부분 -->
+	<jsp:include page="../../inc/header.jsp"/> <!-- 개쩐다 이게바로 집중화구나 -->
 	
 	<div id = "visual">
 		<div class = "content-container">
@@ -20,35 +21,9 @@
 	</div>
 	
 	<div id = "body" class="clearfix">
-		<div class="content-container">
-	
-			<aside id="aside">
-			
-			<!-- 	<h1>고객센터</h1>
-		
-				<nav>
-					<h1>고객센터 메뉴</h1>
-					<ul>
-						<li><a href="">공지사항</a></li>
-						<li><a href="">1:1고객문의</a></li>
-						<li><a href="">학습안내</a></li>
-					</ul>
-				</nav>
-		
-				<nav>
-					<h1>추천사이트</h1>
-					<ul>
-						<li><a href="">앤서이즈</a></li>
-						<li><a href="">W3C</a></li>
-						<li><a href="">마이크로소프트</a></li>
-					</ul>
-				</nav>
-		
-				<nav>
-					<h1>구글광고</h1>
-				</nav> -->
-			</aside>
-	
+		<div class="content-container clearfix">
+			<!-- 어사이드 -->
+	<jsp:include page="../inc/aside.jsp"/> 
 	
 			<main id ="main">	
 				 <h2>공지사항</h2>
@@ -61,15 +36,31 @@
 					</ol>
 				</div>
 				
+				 <table border="1">
+	            <tr>
+	               <th>번호</th>
+	               <th>제목</th>
+	               <th>작성자</th>
+	               <th>작성일</th>
+	               <th>조회수</th>
+	            </tr>      
+		            <tr>
+		               <td>${d.id}</td>
+		               <td>${d.title}</td>
+		               <td>왜안될까</td>
+		               <td>${d.regDate}</td>
+		               <td>${d.hit}</td>         
+		            </tr>
+	         </table>
+				
 				<div>자세한 내용</div>
 	         	<a class="btn btn-default" href="notice-list">뒤로가기 </a>
-			</div> 
-			</main>
-		</div>
-	<footer id = "footer"> <!-- sist 1류 수강생들 모임  -->
-		<div class="content-container">
-		</div>
-	</footer>
+			</main>'
+		</div> 
+	</div>
+		
+		<jsp:include page="../../inc/footer.jsp"/>
+<!-- 푸터부분 -->
 
 </body>
 </html>

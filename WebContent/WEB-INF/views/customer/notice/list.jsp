@@ -22,33 +22,8 @@
 	<div id = "body" class="clearfix">
 		<div class="content-container clearfix">
 	
-			<aside id="aside">
-			
-			<!-- 	<h1>고객센터</h1>
-		
-				<nav>
-					<h1>고객센터 메뉴</h1>
-					<ul>
-						<li><a href="">공지사항</a></li>
-						<li><a href="">1:1고객문의</a></li>
-						<li><a href="">학습안내</a></li>
-					</ul>
-				</nav>
-		
-				<nav>
-					<h1>추천사이트</h1>
-					<ul>
-						<li><a href="">앤서이즈</a></li>
-						<li><a href="">W3C</a></li>
-						<li><a href="">마이크로소프트</a></li>
-					</ul>
-				</nav>
-		
-				<nav>
-					<h1>구글광고</h1>
-				</nav> -->
-			</aside>
-	
+			<!-- 어사이드 -->
+	<jsp:include page="../inc/aside.jsp"/> 
 	
 			<main id ="main">	
 				 <h2>공지사항</h2>
@@ -80,8 +55,8 @@
 	            <c:forEach var="n"  items="${list}">
 		            <tr>
 		               <td>${n.id}</td>
-		               <td><a href="notice-detail">${n.title}</a></td>
-		               <td>${n.content}</td>
+		               <td><a href="notice-detail?id=${n.id}">${n.title}</a></td>
+		               <td>newlec</td>
 		               <td>${n.regDate}</td>
 		               <td>${n.hit}</td>         
 		            </tr>
@@ -92,11 +67,11 @@
 				<a class="btn-img btn-cancel" href ="">취소</a>
 			</div> 
 			</main>
+			
 		</div>
-	<footer id = "footer"> <!-- sist 1류 수강생들 모임  -->
-		<div class="content-container">
-		</div>
-	</footer>
+		
+		<jsp:include page="../../inc/footer.jsp"/>
+<!-- 푸터부분 -->
 
 </body>
 </html>
