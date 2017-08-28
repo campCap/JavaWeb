@@ -6,7 +6,7 @@
 <header id="header">
 		<div class="content-container">
 			<h1 id="logo">
-				<a href=""> <img src="../images/logo.png" alt="영찾바키123" /></a>
+				<a href=""> <img src="${path}/images/logo.png" alt="영찾바키123" /></a>
 			</h1>
 			<section>
 				<h2 class="hidden">머릿말</h2>
@@ -25,7 +25,7 @@
 					<h1 class="hidden">강좌검색 폼</h1>
 					<form>
 						<label>과정검색</label> 
-						<input type="" /> 
+						<input class="text" type="text"/> 
 						<input class ="btn-img btn-search" type="submit" value="빠가" />
 					</form>
 				</section>

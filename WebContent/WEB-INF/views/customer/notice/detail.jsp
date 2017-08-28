@@ -47,7 +47,7 @@
 		            <tr>
 		               <td>${d.id}</td>
 		               <td>${d.title}</td>
-		               <td>왜안될까</td>
+		               <td>${d.content}</td>
 		               <td>${d.regDate}</td>
 		               <td>${d.hit}</td>         
 		            </tr>

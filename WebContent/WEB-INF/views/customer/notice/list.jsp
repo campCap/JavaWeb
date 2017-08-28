@@ -22,8 +22,8 @@
 	<div id = "body" class="clearfix">
 		<div class="content-container clearfix">
 	
-			<!-- 어사이드 -->
-	<jsp:include page="../inc/aside.jsp"/> 
+			
+	<jsp:include page="../inc/aside.jsp"/> <!-- 어사이드 -->
 	
 			<main id ="main">	
 				 <h2>공지사항</h2>

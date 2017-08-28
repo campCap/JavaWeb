@@ -55,7 +55,6 @@ body{
 .btn-img{
 	display: inline-block;
 	border: 0px;
-	text-indent: -999px;/* 왼쪽으로 밈 (들여쓰기) */
 	cursor: pointer;
 	overflow: hidden;
 	
@@ -160,7 +159,24 @@ body{
 	border: 5px solid #8cba34;
 	top: 21px;
 	left: 468px;
+	
 }
+	#search-form form{
+		position:relative;
+		display: flex;
+		display: -webkit-flex;
+	}
+	
+	#search-form input[type=text]{
+		flex-grow: 1;
+		border:0px;
+	}
+	
+	#search-form label{
+		padding:0px 5px;
+		font-weight:bold;
+		align-self: center;
+	}
 /* --------------------------------- */
 
 #member-menu{
@@ -229,20 +245,4 @@ body{
 	height: 100px;
 	background: #313131;
 }
-#floating{
-	position: fixed;
-	width:100%;
-	height: 50px;
-	background: lime;
-	left: 0px;
-	top: 0px 
-}
-	#floating div{
-		position: absolute;
-		height: 60px;
-		width: 60px;
-		background: fuchsia;
-		/* top: 10px;
-		left: 10px */
-	}
 
