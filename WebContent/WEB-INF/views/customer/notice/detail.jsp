@@ -39,22 +39,38 @@
 				 <table border="1">
 	            <tr>
 	               <th>번호</th>
+	               <td colspan="3">${d.id}</td>
+            	</tr>
+            	<tr>
 	               <th>제목</th>
-	               <th>작성자</th>
+	               <td colspan="3">${d.title}</td>
+	            </tr>
+	            <tr>
 	               <th>작성일</th>
-	               <th>조회수</th>
+	               <td colspan="3">${d.regDate}</td>
 	            </tr>      
-		            <tr>
-		               <td>${d.id}</td>
-		               <td>${d.title}</td>
-		               <td>${d.content}</td>
-		               <td>${d.regDate}</td>
-		               <td>${d.hit}</td>         
-		            </tr>
+	            <tr>
+	               <th>작성자</th>
+	               <td>newlec</td>
+	               <th>조회수</th>
+	               <td>${d.hit}</td>         
+		         </tr>
+		         <tr>
+		         	<th>첨부파일</th>
+		         	<td colspan="3"></td>
+		         </tr>   
+		         <tr>
+		         	<th>내용</th>
+		         	<td colspan="4">${d.content}</td>
+		         </tr>
 	         </table>
 				
 				<div>자세한 내용</div>
-	         	<a class="btn btn-default" href="notice-list">뒤로가기 </a>
+				<div>
+	         		<a class="btn btn-default" href="notice-list">목록</a>
+	         		<a class="btn btn-default" href="notice-edit?id=${d.id}">수정</a>
+	         		<a class="btn btn-default" href="notice-del">삭제</a>
+	         	</div>
 			</main>'
 		</div> 
 	</div>
