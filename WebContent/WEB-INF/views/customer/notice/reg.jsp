@@ -36,8 +36,8 @@
 					</ol>
 				</div>
 				
-				<form method="post">
-					 <table border="1">
+				<form method="post" >
+					 <table class="table">
 		            <tr>
 		               <th>번호</th>
 		               <td colspan="3">${d.id}</td>

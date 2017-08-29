@@ -44,7 +44,8 @@
 	               <input type="submit" />
 	            </form>
 	         </div>
-	         <table border="1">
+	         
+	         <table class="table table-list">
 	            <tr>
 	               <th>번호</th>
 	               <th>제목</th>

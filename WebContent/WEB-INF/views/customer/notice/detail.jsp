@@ -36,7 +36,7 @@
 					</ol>
 				</div>
 				
-				 <table border="1">
+				 <table class="table">
 	            <tr>
 	               <th>번호</th>
 	               <td colspan="3">${d.id}</td>
