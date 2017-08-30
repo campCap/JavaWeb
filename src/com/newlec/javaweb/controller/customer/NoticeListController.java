@@ -24,18 +24,17 @@ public class NoticeListController extends HttpServlet{
 		
 		String _title = request.getParameter("title");
 		String _page = request.getParameter("p");
+		
+		String title="";
 		int page = 1;
 		
 		if(_page !=null && !_page.equals(""))
 			page=Integer.parseInt(_page);
 			
-		
-		
-		int offset = (page-1)*10;
-		String title="";
-		
 		if(_title !=null && !_title.equals(""))
 			title= _title;
+		
+		int offset = (page-1)*10;
 		
 		List<Notice> list = null;
 		
@@ -52,6 +51,7 @@ public class NoticeListController extends HttpServlet{
 		
 		      // ½ÇÇà
 		      PreparedStatement st = con.prepareStatement(sql);
+		      
 		      st.setString(1, "%"+title+"%");
 		      st.setInt(2, offset);
 		
