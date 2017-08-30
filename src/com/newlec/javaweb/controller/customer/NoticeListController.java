@@ -23,6 +23,15 @@ public class NoticeListController extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String _title = request.getParameter("title");
+		String _page = request.getParameter("p");
+		int page = 1;
+		
+		if(_page !=null && !_page.equals(""))
+			page=Integer.parseInt(_page);
+			
+		
+		
+		int offset = (page-1)*10;
 		String title="";
 		
 		if(_title !=null && !_title.equals(""))
@@ -30,7 +39,7 @@ public class NoticeListController extends HttpServlet{
 		
 		List<Notice> list = null;
 		
-		String sql = "select * from Notice where title like ?";
+		String sql = "select * from Notice where title like ? order by regDate desc limit ?, 10";
 		
 		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		
@@ -44,6 +53,7 @@ public class NoticeListController extends HttpServlet{
 		      // 실행
 		      PreparedStatement st = con.prepareStatement(sql);
 		      st.setString(1, "%"+title+"%");
+		      st.setInt(2, offset);
 		
 		      // 결과 가져오기
 		      ResultSet rs = st.executeQuery();
@@ -57,7 +67,8 @@ public class NoticeListController extends HttpServlet{
 		         n.setId(rs.getString("ID"));
 		         n.setTitle(rs.getString("TITLE"));
 		         n.setContent(rs.getString("content"));
-		         /*n.setRegDate(rs.getDate("regDate"));*/
+		         n.setRegDate(rs.getDate("regDate"));
+		         n.setWriterId(rs.getString("writerId"));
 		         //..
 		         
 		         list.add(n);

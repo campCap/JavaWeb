@@ -109,7 +109,7 @@ body{
 		}
 /* --------------격자형--------------------- */
 .table{
-	display: table;
+	display: flex;
 	width: 100%;
 	border-top: 2px solid #8cba35;
 }
@@ -138,8 +138,31 @@ body{
 			background: none;
 			background: #f5f5f5;
 		}
-			
-/* ------------------------------ */
+/* ------------main------------------------- */
+main .title{
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+main .main{
+	font-family: 맑은 고딕, 고딕, sans-serif;
+	font-size: 21px;
+	font-weight: bold;
+	color: #646464;
+	padding-left: 25px;
+	background: url("../images/icon-main-title.png") no-repeat left center;
+}
+
+main .w60{
+	 min-width: 60px;
+}
+main .w100{
+	min-width: 100px;
+}
+main .max400{
+	max-width: 400px;;
+}		
+/* ------------------------------------------- */
 #header{
 	height: 70px;
 }
@@ -252,6 +275,7 @@ body{
 }
 	#body .content-container{
   	 background:url("../images/bg-body.png") repeat-y left;
+  	 padding-bottom: 50px;
 	}
 	#aside {
 		float: left;

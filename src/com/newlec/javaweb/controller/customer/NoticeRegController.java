@@ -29,7 +29,8 @@ public class NoticeRegController extends HttpServlet{
 		Notice n = null;
 	      
 	      String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-	      String sql = "insert into Notice(id, title, content) values(?,?,?)" ;
+	      String sql = "insert into Notice(id, title, content,writerId) "
+	      		+ "values((select ifnull(max(cast(id as unsigned)),0)+1 id from Notice n),?,?,?)" ;
 
 	      
 	      try {
@@ -43,6 +44,7 @@ public class NoticeRegController extends HttpServlet{
 	         PreparedStatement st = con.prepareStatement(sql);
 	         st.setString(1, title);
 	         st.setString(2, content);
+	         st.setString(3, "robin");
 	         
 	         // 업데이스 결과 가져오기 몇개인지
 	         int result = st.executeUpdate();
