@@ -40,33 +40,35 @@
 					  <h3>공지사항 검색 폼</h3>
 	            <form action="notice-list" method="get">
 	               <label>검색어</label>
-	               <input type="text" name="title" />
+	               <input type="text" name="query" />
 	               <input type="submit" />
 	            </form>
 	         </div>
 	         
 	         <table class="table table-list">
 	            <tr>
-	               <th>번호</th>
-	               <th>제목</th>
-	               <th>작성자</th>
-	               <th>작성일</th>
-	               <th>조회수</th>
+	               <th class="w60">번호</th>
+	               <th >제목</th>
+	               <th class="w100">작성자</th>
+	               <th class="w100">작성일</th>
+	               <th class="w60">조회수</th>
 	            </tr>      
 	            <c:forEach var="n"  items="${list}">
 		            <tr>
-		               <td class="w60">${n.id}</td>
-		               <td class="title max400"><a href="notice-detail?id=${n.id}">${n.title}</a></td>
-		               <td class="w100">${n.writerId}</td>
-		               <td class="w100" >${n.regDate}</td>
-		               <td class="w60">${n.hit}</td>         
+		               <td>${n.id}</td>
+		               <td class="title text-left text-indent"><a href="notice-detail?id=${n.id}">${n.title}</a></td>
+		               <td>${n.writerId}</td>
+		               <td>${n.regDate}</td>
+		               <td>${n.hit}</td>         
 		            </tr>
 	            </c:forEach>
 	         </table>
 	         <c:set var="page" value="${param.p}"/>
 	         <c:set var="startPage" value="${page-(page-1)%5 }"/>
+	         <c:set var="lastPage" value="${count/10}"/>
+	         ${lastPage}
 	         <div class ="hr-list member-menu">
-	         <div><a href="?p=1">이전</a></div>
+	         	<div><a href="?p=1">이전</a></div>
 	         	<ul>
 	         		<c:forEach var="i" begin="0" end="4">
 		         		<li><a href="?p=${startPage+i}">${startPage+i}</a></li>
@@ -83,7 +85,7 @@
 		</div>
 		
 		<jsp:include page="../../inc/footer.jsp"/>
-<!-- 푸터부분 -->
+		<!-- 푸터부분 -->
 
 </body>
 </html>

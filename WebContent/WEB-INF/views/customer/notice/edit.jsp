@@ -37,14 +37,14 @@
 				</div>
 				
 				<form method="post">
-					 <table border="1">
+					 <table class="table">
 		            <tr>
 		               <th>번호</th>
 		               <td colspan="3">${d.id}</td>
 		           	</tr>
 		           	<tr>
 		               <th>제목</th>
-		               <td colspan="3"><input name="title" value="${d.title}"/></td>
+		               <td class="text-left" colspan="3"><input name="title" value="${d.title}"/></td>
 		            </tr>
 		            <tr>
 		               <th>작성일</th>
@@ -62,7 +62,7 @@
 			         </tr>   
 			         <tr>
 			         	<th>내용</th>
-			         	<td colspan="4"><textarea name="content">${d.content}</textarea></td>
+			         	<td class="text-left" colspan="4"><textarea name="content">${d.content}</textarea></td>
 			         </tr>
 		         </table>
 					

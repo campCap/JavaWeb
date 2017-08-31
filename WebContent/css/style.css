@@ -34,7 +34,19 @@ body{
 	font-size: 11px;
 	color:#979797;
 }
-
+/* ---------------------text Style------------------------------ */
+.text-left{
+	text-align: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+.text-indent{
+	text-indent: 10px;
+}
 
 /* ---------------------------------------------------- */
 .btn{
@@ -109,9 +121,10 @@ body{
 		}
 /* --------------격자형--------------------- */
 .table{
-	display: flex;
+	display: table;
 	width: 100%;
 	border-top: 2px solid #8cba35;
+	table-layout: fixed;
 }
 
 .table tr,
@@ -135,13 +148,21 @@ body{
 	background: #f5f5f5 url("../images/bg-title-sp.png") no-repeat left center;
 }
 .table th:first-child{
-			background: none;
-			background: #f5f5f5;
+	background: none;
+	background: #f5f5f5;
 		}
+		
+.table tr td.text-left,
+.table tr th.text-left,
+.table .tr .td.text-left
+.table .tr .th.text-left{
+	text-align: left;
+}
 /* ------------main------------------------- */
 main .title{
 	overflow: hidden;
 	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 main .main{
@@ -154,13 +175,13 @@ main .main{
 }
 
 main .w60{
-	 min-width: 60px;
+	 width: 60px;
 }
 main .w100{
-	min-width: 100px;
+	width: 100px;
 }
 main .max400{
-	max-width: 400px;;
+	width: 400px;;
 }		
 /* ------------------------------------------- */
 #header{
