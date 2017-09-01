@@ -47,6 +47,10 @@ body{
 .text-indent{
 	text-indent: 10px;
 }
+.text-strong{
+	color: orange;
+	font-weight: bold;
+}
 
 /* ---------------------------------------------------- */
 .btn{

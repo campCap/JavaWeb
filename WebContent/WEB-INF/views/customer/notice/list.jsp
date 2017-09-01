@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -56,7 +57,7 @@
 	            <c:forEach var="n"  items="${list}">
 		            <tr>
 		               <td>${n.id}</td>
-		               <td class="title text-left text-indent"><a href="notice-detail?id=${n.id}">${n.title}</a></td>
+		               <td class="title text-left text-indent"><a href="notice-detail?id=${n.id}">${n.title}[${n.countCmt}]</a></td>
 		               <td>${n.writerId}</td>
 		               <td>${n.regDate}</td>
 		               <td>${n.hit}</td>         
@@ -65,16 +66,31 @@
 	         </table>
 	         <c:set var="page" value="${param.p}"/>
 	         <c:set var="startPage" value="${page-(page-1)%5 }"/>
-	         <c:set var="lastPage" value="${count/10}"/>
-	         ${lastPage}
-	         <div class ="hr-list member-menu">
-	         	<div><a href="?p=1">이전</a></div>
+	         <c:set var="lastPage" value="${fn:substringBefore((count%10 ==0 ? count / 10 : count/10+1),'.')}"/> <!-- 삼항연산자 -->
+	         <div class ="">
+	         	<c:if test="${startPage+i>5}">
+	         	<div><a href="?p=${startPage-5}">이전</a></div>
+	         	</c:if>
 	         	<ul>
 	         		<c:forEach var="i" begin="0" end="4">
-		         		<li><a href="?p=${startPage+i}">${startPage+i}</a></li>
+	         			<c:set var="strong" value="" />
+	         			<c:if test="${page==startPage+i}">
+	         				<c:set var="strong" value="text-strong"/>
+	         			</c:if>
+		         		<c:if test="${startPage+i <= lastPage}">
+			         		<li><a class="${strong}" href="?p=${startPage+i}">${startPage+i}</a></li>
+		         		</c:if>
+		         		
+		         		<c:if test="${startPage+i > lastPage}">
+		         			<li>${startPage+i}</li>
+		         		</c:if>
 	         		</c:forEach>
 	         	</ul>
-	         	<div><a href="?p=6">다음</a></div>
+	         	<div>
+	         		<c:if test="${lastPage>=startPage+5}">
+	         		<a href="?p=${startPage+5}">다음</a>
+	         		</c:if>
+	         	</div>
 	         </div>
 
 				<a class="btn btn-default" href="notice-reg">글쓰기</a>

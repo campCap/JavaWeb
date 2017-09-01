@@ -11,16 +11,17 @@ import java.util.List;
 
 import com.newlec.javaweb.dao.NoticeDao;
 import com.newlecture.javaweb.entity.Notice;
+import com.newlecture.javaweb.entity.NoticeView;
 
 public class JdbcNoticeDao implements NoticeDao {
 
-	public List<Notice> getList(int page, String query) {
+	public List<NoticeView> getList(int page, String query) {
 		
-		String sql = "select * from Notice where title like ? order by regDate desc limit ?, 10";
+		String sql = "select * from NoticeView where title like ? order by regDate desc limit ?, 10";
 		
 		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		
-		List<Notice> list = null;
+		List<NoticeView> list = null;
 		int offset = (page-1)*10;
 		
 		  // JDBC 드라이버 로드
@@ -45,12 +46,14 @@ public class JdbcNoticeDao implements NoticeDao {
 		      
 		      // 결과 사용하기
 		      while (rs.next()) {
-		         Notice n = new Notice();
-		         n.setId(rs.getString("ID"));
-		         n.setTitle(rs.getString("TITLE"));
+		         NoticeView n = new NoticeView();
+		         n.setId(rs.getString("id"));
+		         n.setTitle(rs.getString("title"));
+		         n.setWriterId(rs.getString("writerId"));
 		         n.setContent(rs.getString("content"));
 		         n.setRegDate(rs.getDate("regDate"));
-		         n.setWriterId(rs.getString("writerId"));
+		         n.setWriterName(rs.getString("writerName"));
+		         n.setCountCmt(rs.getInt("countCmt"));
 		         //..
 		         
 		         list.add(n);
@@ -70,7 +73,7 @@ public class JdbcNoticeDao implements NoticeDao {
 
 	public int getCount() {
 
-		String sqlCount = "select count(id) from Notice";
+		String sqlCount = "select count(id) count from Notice";
 		
 		String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
 		
@@ -87,6 +90,7 @@ public class JdbcNoticeDao implements NoticeDao {
 		      //페이징
 		      Statement stCount = con.createStatement();
 		      ResultSet rsCount = stCount.executeQuery(sqlCount);
+		      rsCount.next();
 		      count = rsCount.getInt("count");
 		
 		
@@ -108,11 +112,11 @@ public class JdbcNoticeDao implements NoticeDao {
 	}
 
 	@Override
-	public Notice get(String id) {
+	public NoticeView get(String id) {
 		
 		 String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-	     String sql = "SELECT *FROM Notice WHERE id = ?";
-	     Notice n = null;
+	     String sql = "SELECT *FROM NoticeView WHERE id = ?";
+	     NoticeView n = null;
 	      
 	      try {
 	         Class.forName("com.mysql.jdbc.Driver");
@@ -133,13 +137,15 @@ public class JdbcNoticeDao implements NoticeDao {
 	         
 	         // 결과 사용하기
 	         if (rs.next()) {
-	            n = new Notice();
+	            n = new NoticeView();
 	            n.setId(rs.getString("id"));
 	            n.setTitle(rs.getString("title"));
 	            n.setContent(rs.getString("content"));
 	            n.setWriterId(rs.getString("writerid"));
 	            n.setRegDate(rs.getDate("regDate"));
 	            n.setHit(rs.getInt("hit"));
+	            n.setWriterName(rs.getString("writerName"));
+		        n.setCountCmt(rs.getInt("countCmt"));
 	            //..
 	            
 	         }
