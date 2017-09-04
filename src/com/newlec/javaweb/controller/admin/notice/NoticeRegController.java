@@ -1,4 +1,4 @@
-package com.newlec.javaweb.controller.customer;
+package com.newlec.javaweb.controller.admin.notice;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlecture.javaweb.entity.Notice;
 
-@WebServlet("/customer/notice-reg")
+@WebServlet("/admin/notice/reg")
 public class NoticeRegController extends HttpServlet{
    
 	@Override
@@ -64,7 +64,7 @@ public class NoticeRegController extends HttpServlet{
 
 	      
 	      
-	     response.sendRedirect("notice-list");
+	     response.sendRedirect("list");
 		
 		}
 	
@@ -72,7 +72,7 @@ public class NoticeRegController extends HttpServlet{
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
     
-      request.getRequestDispatcher("/WEB-INF/views/customer/notice/reg.jsp").forward(request, response);
+      request.getRequestDispatcher("/WEB-INF/views/admin/notice/reg.jsp").forward(request, response);
    }
 
 }

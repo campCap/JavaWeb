@@ -1,4 +1,4 @@
-package com.newlec.javaweb.controller.customer;
+package com.newlec.javaweb.controller.admin.notice;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import com.newlec.javaweb.dao.NoticeDao;
 import com.newlec.javaweb.dao.jdbc.JdbcNoticeDao;
 import com.newlecture.javaweb.entity.Notice;
 
-@WebServlet("/customer/notice-edit")
+@WebServlet("/admin/notice/edit")
 public class NoticeEditController extends HttpServlet{
    
 	@Override
@@ -37,7 +37,7 @@ public class NoticeEditController extends HttpServlet{
 
 	      
 	      
-	     response.sendRedirect("notice-detail?id="+id);
+	     response.sendRedirect("detail?id="+id);
 		
 		}
 	
@@ -97,7 +97,7 @@ public class NoticeEditController extends HttpServlet{
       request.setAttribute("d", n);
       
       //response.sendRedirect("notice.jsp");
-      request.getRequestDispatcher("/WEB-INF/views/customer/notice/edit.jsp").forward(request, response);
+      request.getRequestDispatcher("/WEB-INF/views/admin/notice/edit.jsp").forward(request, response);
    }
 
 }

@@ -15,10 +15,7 @@
 	<!-- 헤더부분 -->
 	<jsp:include page="../../inc/header.jsp"/> <!-- 개쩐다 이게바로 집중화구나 -->
 	
-	<div id = "visual">
-		<div class = "content-container">
-		</div>
-	</div>
+	<jsp:include page="../inc/visual.jsp"/>
 	
 	<div id = "body" class="clearfix">
 		<div class="content-container clearfix">

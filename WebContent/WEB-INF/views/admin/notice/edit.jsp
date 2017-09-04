@@ -8,17 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
 	<!-- 헤더부분 -->
 	<jsp:include page="../../inc/header.jsp"/> <!-- 개쩐다 이게바로 집중화구나 -->
 	
-	<div id = "visual">
-		<div class = "content-container">
-		</div>
-	</div>
+	<jsp:include page="../inc/visual.jsp"/>
 	
 	<div id = "body" class="clearfix">
 		<div class="content-container clearfix">
@@ -36,7 +33,7 @@
 					</ol>
 				</div>
 				
-				<form method="post" >
+				<form method="post">
 					 <table class="table">
 		            <tr>
 		               <th>번호</th>
@@ -44,21 +41,32 @@
 		           	</tr>
 		           	<tr>
 		               <th>제목</th>
-		               <td colspan="3"><input name="title"/></td>
+		               <td class="text-left" colspan="3"><input name="title" value="${d.title}"/></td>
 		            </tr>
+		            <tr>
+		               <th>작성일</th>
+		               <td colspan="3">${d.regDate}</td>
+		            </tr>      
+		            <tr>
+		               <th>작성자</th>
+		               <td>newlec</td>
+		               <th>조회수</th>
+		               <td>${d.hit}</td>         
+			         </tr>
 			         <tr>
 			         	<th>첨부파일</th>
 			         	<td colspan="3"></td>
 			         </tr>   
 			         <tr>
 			         	<th>내용</th>
-			         	<td colspan="4"><textarea name="content"></textarea></td>
+			         	<td class="text-left" colspan="4"><textarea name="content">${d.content}</textarea></td>
 			         </tr>
 		         </table>
 					
 					<div>
-		         		<input type="submit" class ="btn btn-default" value="등록"/>
-		         		<a class="btn btn-default" href="notice-list">취소</a>
+						<input class="hidden" type="text" name="id" value="${d.id}"/>
+		         		<input type="submit" class ="btn btn-default" value="저장"/>
+		         		<a class="btn btn-default" href="detail?id=${d.id}">삭제</a>
 		         	</div>
 	         	</form>
 	         	

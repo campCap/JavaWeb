@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
 </head>
 <body>
 	<!-- 헤더부분 -->
@@ -64,9 +64,9 @@
 				
 				<div>자세한 내용</div>
 				<div>
-	         		<a class="btn btn-default" href="notice-list">목록</a>
-	         		<a class="btn btn-default" href="notice-edit?id=${d.id}">수정</a>
-	         		<a class="btn btn-default" href="notice-del">삭제</a>
+	         		<a class="btn btn-default" href="list">목록</a>
+	         		<a class="btn btn-default" href="edit?id=${d.id}">수정</a>
+	         		<a class="btn btn-default" href="del">삭제</a>
 	         	</div>
 			</main>'
 		</div> 
