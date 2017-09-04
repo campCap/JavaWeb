@@ -29,7 +29,6 @@
 				
 			</main>
 		</div> 
-			
 	</div>
 		
 		<jsp:include page="../inc/footer.jsp"/>

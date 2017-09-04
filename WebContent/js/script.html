@@ -4,10 +4,20 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	var x = {};
-	x.name="chamyung";
-	x.phone="01023223";
-	alert(x.phone)
+	var json = [
+				{id:"1",title:"hello", "writerId":"newlec"},
+				{id:"2",title:"he34lo", "writerId":"new34lec"}
+				];
+	alert(json[1].title);
+	alert(json[1]["title"]);
+	
+	alert("dfdf")
+	
+/* 	var data = eval('({id:"1", title:"hello"})');
+	alert(data.title); */
+	var data = JSON.parse('{"id":"1", "title":"he34545454llo"}');
+	alert(typeof data.title);
+	
 </script>
 </head>
 <body>
