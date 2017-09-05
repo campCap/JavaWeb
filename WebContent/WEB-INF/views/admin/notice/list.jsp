@@ -35,12 +35,12 @@
 				</div>
 			
 				<div>
-					  <h3>공지사항 검색 폼</h3>
-	            <form action="list" method="get">
-	               <label>검색어</label>
-	               <input type="text" name="query" />
-	               <input type="submit" />
-	            </form>
+			  	<h3>공지사항 검색 폼</h3>
+		            <form action="list" method="get">
+		               <label>검색어</label>
+		               <input type="text" name="query" />
+		               <input type="submit" />
+		            </form>
 	         </div>
 	         
 	         <table class="table table-list">

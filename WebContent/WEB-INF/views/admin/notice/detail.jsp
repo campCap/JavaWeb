@@ -33,7 +33,7 @@
 					</ol>
 				</div>
 				
-				 <table class="table">
+			 <table class="table">
 	            <tr>
 	               <th>번호</th>
 	               <td colspan="3">${d.id}</td>
