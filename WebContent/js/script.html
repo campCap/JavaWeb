@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	var json = [
+/* 	var json = [
 				{id:"1",title:"hello", "writerId":"newlec"},
 				{id:"2",title:"he34lo", "writerId":"new34lec"}
 				];
@@ -15,8 +15,28 @@
 	
 /* 	var data = eval('({id:"1", title:"hello"})');
 	alert(data.title); */
-	var data = JSON.parse('{"id":"1", "title":"he34545454llo"}');
-	alert(typeof data.title);
+	/* var data = JSON.parse('{"id":"1", "title":"he34545454llo"}');
+	alert(typeof data.title); */
+	
+	/* var x = 3;
+	var y = new Number(3);  */
+	 /* === 주소 비교 */
+	 
+	// alert(a);  undifined 
+	//{var a=1} 
+	 
+	 var data = {id:1, title:"hello", writerId:"newlec"};
+	
+	for(var i in data)
+		alert(data[i]);
+	
+	var add = function(){
+		var sum = 0;
+		for(var i=0; i<arguments.length; i++)
+			sum += arguments[i];
+		return sum;
+	};
+	alert(add(3,5,10));
 	
 </script>
 </head>

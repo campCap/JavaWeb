@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.newlecture.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.Notice;
 
 @WebServlet("/admin/notice/reg")
 public class NoticeRegController extends HttpServlet{

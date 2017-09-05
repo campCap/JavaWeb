@@ -2,7 +2,7 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import com.newlecture.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.Notice;
 
 import java.io.*;
 import java.sql.Connection;

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlec.javaweb.dao.NoticeDao;
 import com.newlec.javaweb.dao.jdbc.JdbcNoticeDao;
-import com.newlecture.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.Notice;
 
 @WebServlet("/admin/notice/detail")
 public class NoticeDetailController extends HttpServlet{
@@ -25,15 +25,9 @@ public class NoticeDetailController extends HttpServlet{
       
       String id = request.getParameter("id");
 
-
-      Notice n = null;
-      
-     
       NoticeDao dao = new JdbcNoticeDao();
-      n = dao.get(id);
       
-      
-      request.setAttribute("d", n);
+      request.setAttribute("d", dao.get(id));
       
       //response.sendRedirect("notice.jsp");
       request.getRequestDispatcher("/WEB-INF/views/admin/notice/detail.jsp").forward(request, response);

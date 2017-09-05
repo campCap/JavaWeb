@@ -65,8 +65,6 @@
 				<div>자세한 내용</div>
 				<div>
 	         		<a class="btn btn-default" href="notice-list">목록</a>
-	         		<a class="btn btn-default" href="notice-edit?id=${d.id}">수정</a>
-	         		<a class="btn btn-default" href="notice-del">삭제</a>
 	         	</div>
 			</main>'
 		</div> 

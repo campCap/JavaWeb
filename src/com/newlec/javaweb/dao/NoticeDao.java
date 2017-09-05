@@ -2,8 +2,8 @@ package com.newlec.javaweb.dao;
 
 import java.util.List;
 
-import com.newlecture.javaweb.entity.Notice;
-import com.newlecture.javaweb.entity.NoticeView;
+import com.newlec.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.NoticeView;
 
 public interface NoticeDao {
 	
@@ -11,5 +11,6 @@ public interface NoticeDao {
 	int getCount();
 	NoticeView get(String id);
 	int update(String id, String title, String content);
+	Notice getEdit(String id);
 	
 }

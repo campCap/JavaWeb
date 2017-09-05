@@ -17,7 +17,7 @@
 	
 	<jsp:include page="inc/visual.jsp"/>
 	
-	<div id = "body" class="clearfix">
+	<div id="body" class="clearfix">
 		<div class="content-container clearfix">
 	
 			
@@ -26,6 +26,69 @@
 			<main id ="main">	
 				
 			<h1>회원가입</h1>
+				
+				<form action="join" method="post">
+			         <fieldset>
+			            <legend>회원정보</legend>
+			            <table>
+			               <tbody>
+			                  <tr>
+			                     <th><label>아이디</label></th>
+			                     <td>
+			                        <input name="id" value=""/>
+			                        <a target="_blank" href="check-id">중복확인</a>                       
+			                        <span></span>
+			                     </td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>비밀번호</label></th>
+			                     <td><input name="pwd" /></td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>비밀번호 확인</label></th>
+			                     <td><input name="pwd" /></td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>이름</label></th>
+			                     <td><input name="name"  value=""/></td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>필명</label></th>
+			                     <td><input name="nicname" /></td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>성별</label></th>
+			                     <td>
+			                        <select name="gender">
+			                           <option>선택</option>
+			                           <option>남성</option>
+			                           <option>여성</option>
+			                        </select>
+			                     </td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>생년월일</label></th>
+			                     <td>
+			                        <input name="y" />년<input name="m" />월<input name="d" />일
+			                        <input type="radio" name="moon" value="no"/>양력 <!-- 이름을 똑같이 -->
+			                        <input type="radio" name="moon" value="yes"/>음력
+			                     </td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>핸드폰번호</label></th>
+			                     <td><input name="phone" /></td>
+			                  </tr>
+			                  <tr>
+			                     <th><label>이메일</label></th>
+			                     <td><input name="email" /></td>
+			                  </tr>
+			                  <tr>                     
+			                     <td><input type="submit" name="btn" value="확인" /></td>
+			                  </tr>
+			               </tbody>
+			            </table>
+			         </fieldset>
+			      </form>
 				
 			</main>
 		</div> 

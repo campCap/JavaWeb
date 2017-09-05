@@ -1,4 +1,4 @@
-package com.newlecture.javaweb.entity;
+package com.newlec.javaweb.entity;
 import java.util.Date;
 
 public class Notice {

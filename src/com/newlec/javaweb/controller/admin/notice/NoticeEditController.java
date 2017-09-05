@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlec.javaweb.dao.NoticeDao;
 import com.newlec.javaweb.dao.jdbc.JdbcNoticeDao;
-import com.newlecture.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.Notice;
 
 @WebServlet("/admin/notice/edit")
 public class NoticeEditController extends HttpServlet{
@@ -46,55 +46,9 @@ public class NoticeEditController extends HttpServlet{
       
       String id = request.getParameter("id");
 
-
-      Notice n = null;
+      NoticeDao noticedao = new JdbcNoticeDao();
       
-      String url = "jdbc:mysql://211.238.142.247/newlecture?autoReconnect=true&amp;useSSL=false&characterEncoding=UTF-8";
-      String sql = "SELECT *FROM Notice WHERE id = ?";
-
-      
-      try {
-         Class.forName("com.mysql.jdbc.Driver");
-
-         // 연결 / 인증
-         Connection con = DriverManager.getConnection(url, "sist", "cclass");
-
-         // 실행
-         //Statement st = con.createStatement();
-         PreparedStatement st = con.prepareStatement(sql);
-         st.setString(1, id);
-         
-         // 결과 가져오기
-         ResultSet rs = st.executeQuery();
-
-         // Model 
-         
-         
-         // 결과 사용하기
-         if (rs.next()) {
-            n = new Notice();
-            n.setId(rs.getString("id"));
-            n.setTitle(rs.getString("title"));
-            n.setWriterId(rs.getString("writerid"));
-            n.setRegDate(rs.getDate("regDate"));
-            n.setHit(rs.getInt("hit"));
-            n.setContent(rs.getString("content"));
-            //..
-            
-         }
-         rs.close();
-         st.close();
-         con.close();
-         
-      } catch (ClassNotFoundException e) {
-         e.printStackTrace();
-      } catch (SQLException e) {
-         e.printStackTrace();
-      }
-
-      
-      
-      request.setAttribute("d", n);
+      request.setAttribute("d", noticedao.getEdit(id));
       
       //response.sendRedirect("notice.jsp");
       request.getRequestDispatcher("/WEB-INF/views/admin/notice/edit.jsp").forward(request, response);

@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.newlec.javaweb.dao.NoticeDao;
 import com.newlec.javaweb.dao.jdbc.JdbcNoticeDao;
-import com.newlecture.javaweb.entity.Notice;
+import com.newlec.javaweb.entity.Notice;
 
 @WebServlet("/admin/notice/list")
 public class NoticeListController extends HttpServlet{

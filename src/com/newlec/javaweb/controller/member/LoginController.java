@@ -12,12 +12,12 @@ import com.newlec.javaweb.dao.MemberDao;
 import com.newlec.javaweb.dao.jdbc.JdbcMemberDao;
 import com.newlec.javaweb.entity.Member;
 
-@WebServlet("/member/join")
-public class JoinController extends HttpServlet {
+@WebServlet("/member/login")
+public class LoginController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getRequestDispatcher("/WEB-INF/views/member/join.jsp").forward(request, response);
+
+		request.getRequestDispatcher("/WEB-INF/views/member/login.jsp").forward(request, response);
 	}
 
 	@Override
@@ -25,23 +25,17 @@ public class JoinController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String id = request.getParameter("id");
-		String[] pwds = request.getParameterValues("pwd");
-		String moon = request.getParameter("moon");
-		String name = request.getParameter("name");
-		String gender = request.getParameter("gender");
-		String birthday = request.getParameter("birthday");
-		String phone = request.getParameter("phone");
+		String pwd = request.getParameter("pwd");
 		
-		MemberDao memberDao = new JdbcMemberDao();
-/*		int result = memberDao.insert(id,pwds[0], moon, name, gender, birthday, phone);*/
-		Member member = new Member(id,pwds[0], moon, name, gender, birthday, phone);
-		int result = memberDao.insert(member);
+		MemberDao memberdao = new JdbcMemberDao();
+		Member member = memberdao.get(id);
 		
-		if(result >0)
-			response.sendRedirect("confirm");
-		else
+		if(member ==null)
 			response.sendRedirect("?error=1");
-				
+		else if(!member.getPwd().equals(pwd))
+			response.sendRedirect("?error=1");
+		else
+			response.sendRedirect("../index");
 	}
-	
+
 }
