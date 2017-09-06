@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/views/admin/notice/list.jsp=UTF-8
 encoding//WebContent/WEB-INF/views/customer/notice/list.jsp=UTF-8
+encoding//src/com/newlec/javaweb/controller/admin/notice/NoticeRegController.java=UTF-8

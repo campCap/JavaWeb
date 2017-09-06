@@ -26,7 +26,7 @@ public class JoinController extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		String[] pwds = request.getParameterValues("pwd");
-		String moon = request.getParameter("moon");
+		String isLunar = request.getParameter("isLunar");
 		String name = request.getParameter("name");
 		String gender = request.getParameter("gender");
 		String birthday = request.getParameter("birthday");
@@ -34,7 +34,7 @@ public class JoinController extends HttpServlet {
 		
 		MemberDao memberDao = new JdbcMemberDao();
 /*		int result = memberDao.insert(id,pwds[0], moon, name, gender, birthday, phone);*/
-		Member member = new Member(id,pwds[0], moon, name, gender, birthday, phone);
+		Member member = new Member(id,pwds[0], isLunar, name, gender, birthday, phone);
 		int result = memberDao.insert(member);
 		
 		if(result >0)

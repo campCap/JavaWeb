@@ -7,21 +7,29 @@ public class Member {
 	private String id;
 	private String pwd;
 	private String name;
-	private String moon; 
+	private String isLunar; 
 	private String gender; 
 	private String birthday;
 	private String phone;
 	private Date regDate;
 	
+	public String getIsLunar() {
+		return isLunar;
+	}
+	
+	
+	public void setIsLunar(String isLunar) {
+		this.isLunar = isLunar;
+	}
 	public Member() {
 	}
 
 
-	public Member(String id, String pwd, String moon, String name, String gender, String birthday, String phone) {
+	public Member(String id, String pwd, String isLunar, String name, String gender, String birthday, String phone) {
 		super();
 		this.id = id;
 		this.pwd = pwd;
-		this.moon = moon;
+		this.pwd = isLunar;
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
@@ -43,14 +51,6 @@ public class Member {
 
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-
-	public String getMoon() {
-		return moon;
-	}
-
-	public void setMoon(String moon) {
-		this.moon = moon;
 	}
 
 	public String getName() {

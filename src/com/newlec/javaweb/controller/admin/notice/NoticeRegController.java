@@ -1,6 +1,7 @@
 package com.newlec.javaweb.controller.admin.notice;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.newlec.javaweb.entity.Notice;
 
@@ -36,17 +38,17 @@ public class NoticeRegController extends HttpServlet{
 	      try {
 	         Class.forName("com.mysql.jdbc.Driver");
 
-	         // ¿¬°á / ÀÎÁõ
+	         // ì—°ê²° / ì¸ì¦
 	         Connection con = DriverManager.getConnection(url, "sist", "cclass");
 
-	         // ½ÇÇà
+	         // ì‹¤í–‰
 	         //Statement st = con.createStatement();
 	         PreparedStatement st = con.prepareStatement(sql);
 	         st.setString(1, title);
 	         st.setString(2, content);
 	         st.setString(3, "robin");
 	         
-	         // ¾÷µ¥ÀÌ½º °á°ú °¡Á®¿À±â ¸î°³ÀÎÁö
+	         // ì—…ë°ì´ìŠ¤ ê²°ê³¼ ê°€ì ¸ì˜¤ê¸° ëª‡ê°œì¸ì§€
 	         int result = st.executeUpdate();
 	         
 
@@ -70,9 +72,17 @@ public class NoticeRegController extends HttpServlet{
 	
    @Override
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-    
-      request.getRequestDispatcher("/WEB-INF/views/admin/notice/reg.jsp").forward(request, response);
+	   response.setContentType("text/html; charset=UTF-8");
+//	   response.setCharacterEncoding("UTF-8");
+	   PrintWriter out = response.getWriter();
+	   
+	   HttpSession session = request.getSession();
+	   if(session.getAttribute("id") == null)
+		   out.write(
+				   "<script>alert('ë¡œê·¸ì¸ì´ í•„ìš”í•œ ìš”ì²­ì…ë‹ˆë‹¤.');location.href='../../member/login';</script>"
+				   );
+	   else
+		   request.getRequestDispatcher("/WEB-INF/views/admin/notice/reg.jsp").forward(request, response);
    }
 
 }

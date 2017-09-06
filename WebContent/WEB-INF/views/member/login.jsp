@@ -27,7 +27,7 @@
 				
 			<h1>회원가입</h1>
 				
-				<form action="join" method="post">
+				<form  method="post">
 			         <fieldset>
 			            <legend>회원정보</legend>
 			            <table>

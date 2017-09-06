@@ -41,16 +41,14 @@ public class JdbcMemberDao implements MemberDao {
 	         
 	         // 결과 사용하기
 	         if (rs.next()) {
-	            m = new Member(
-	            		rs.getString("id"),
-	            		rs.getString("pwd"),
-	            		rs.getString("name"),
-	            		rs.getString("gender"),
-	            		rs.getString("birthday"),
-	            		rs.getString("phone"),
-	            		rs.getString("email")
-	            		);
-	            
+	            m = new Member();
+	            		m.setId(rs.getString("id"));
+	            		m.setPwd(rs.getString("pwd"));
+	            		m.setIsLunar(rs.getString("isLunar"));
+	            		m.setName(rs.getString("name"));
+	            		m.setGender(rs.getString("gender"));
+	            		m.setBirthday(rs.getString("phone"));
+	            		m.setBirthday(rs.getString("birthday"));
 	         }
 	         rs.close();
 	         st.close();
@@ -89,7 +87,7 @@ public class JdbcMemberDao implements MemberDao {
 	         PreparedStatement st = con.prepareStatement(sql);
 	         st.setString(1, member.getId());
 	         st.setString(2, member.getPwd());
-	         st.setString(3, member.getMoon());
+	         st.setString(3, member.getIsLunar());
 	         st.setString(4, member.getName());
 	         st.setString(5, member.getGender());
 	         st.setString(6, member.getBirthday());

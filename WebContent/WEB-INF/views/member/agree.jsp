@@ -10,10 +10,6 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-<script type="text/javascript">
-	if(${param.error==1})
-		alert("모든 내용에 동의를 하셔야 함 ㅉㅉ..");
-</script>
 </head>
 <body>
 	<!-- 헤더부분 -->
