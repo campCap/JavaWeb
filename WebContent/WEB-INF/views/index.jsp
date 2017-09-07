@@ -13,7 +13,7 @@
    <jsp:include page="inc/header.jsp" /><!--  --------------헤더부분--------------- -->
 
    <div id="body" class="clearfix">
-   
+   인덱스
    </div>
    
    <jsp:include page="inc/footer.jsp" /><!--  --------------푸터부분--------------- -->

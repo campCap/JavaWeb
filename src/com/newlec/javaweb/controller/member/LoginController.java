@@ -25,8 +25,8 @@ public class LoginController extends HttpServlet {
       MemberDao memberDao = new JdbcMemberDao();
 
       Member member = memberDao.get(id);
-
-      if (member == null)
+      
+      if (member == null) 
          response.sendRedirect("login?error");
       else if (!member.getPwd().equals(pwd))
          response.sendRedirect("login?error");
@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
           * 현재 사용자의 상태정보 저장하는 저장소 sesstion, 
           * cookie 모든 사용자 상태정보 저장 저장소 application
           */
+    	  
          request.getSession().setAttribute("id", id);
          response.sendRedirect("../index");
       }

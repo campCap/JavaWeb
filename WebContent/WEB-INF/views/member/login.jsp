@@ -34,9 +34,7 @@
 			               <tbody>
 			                  <tr>
 			                     <th><label>아이디</label></th>
-			                     <td>
-			                        <input name="id" value=""/>
-			                     </td>
+			                     <td><input name="id" value=""/></td>
 			                  </tr>
 			                  <tr>
 			                     <th><label>비밀번호</label></th>

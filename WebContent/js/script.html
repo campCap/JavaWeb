@@ -49,11 +49,23 @@
 	var a = f1();
 	alert(a); */
 	
+	/* window.alert("hello"); */ /* window는 생략 가능 */
 	
+	
+	
+	function printResult(){
+		var x =prompt("x 값을 입력하세요");
+		var y =prompt("y 값을 입력하세요");
+		var x = parseInt(x);
+		var y = parseInt(y);
+		btnPrint.value=x+y;
+	}
 	
 </script>
 </head>
 <body>
-
+	
+	<input id="btnPrint" type="button" value="출력" onclick="printResult()" />
+	
 </body>
 </html>
