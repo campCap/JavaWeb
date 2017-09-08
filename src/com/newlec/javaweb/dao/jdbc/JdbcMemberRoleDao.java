@@ -52,4 +52,10 @@ public class JdbcMemberRoleDao implements MemberRoleDao {
 		return  m;
 	}
 
+	@Override
+	public boolean hasRole(String memberId, String string) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
