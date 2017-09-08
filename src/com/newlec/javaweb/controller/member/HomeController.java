@@ -25,15 +25,11 @@ public class HomeController extends HttpServlet {
 	   Object _memberId = session.getAttribute("id");
 	   
 	   if(_memberId == null)
-		   response.sendRedirect("login");
+		   response.sendRedirect("login?returnURL=home");//home으로 리턴
 	   else {
 		   String memberId = _memberId.toString();
 		   MemberRoleDao dao = new JdbcMemberRoleDao();
 		   String roleId = dao.getDefaultRole(memberId);
-		   
-		   System.out.println(memberId);
-		   System.out.println(roleId);
-		   
 		   
 		   if(roleId.equals("ROLE_TEACHER"))
 			   response.sendRedirect("");

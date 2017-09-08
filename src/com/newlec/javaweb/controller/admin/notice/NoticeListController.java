@@ -15,8 +15,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.newlec.javaweb.dao.MemberRoleDao;
 import com.newlec.javaweb.dao.NoticeDao;
+import com.newlec.javaweb.dao.jdbc.JdbcMemberRoleDao;
 import com.newlec.javaweb.dao.jdbc.JdbcNoticeDao;
 import com.newlec.javaweb.entity.Notice;
 
@@ -24,6 +27,18 @@ import com.newlec.javaweb.entity.Notice;
 public class NoticeListController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		   
+		Object _memberId = session.getAttribute("id");
+		   
+		if(_memberId == null)
+			response.sendRedirect("login?returnURL=../admin/notice/list");
+		else {
+			   String memberId = _memberId.toString();
+			   MemberRoleDao dao = new JdbcMemberRoleDao();
+			   boolean role = dao.hasRole(memberId, "ROLE_ADMIN");
+		}
 		
 		String _query = request.getParameter("query");
 		String _page = request.getParameter("p");
