@@ -58,9 +58,8 @@
 		var yText = document.getElementById("y");
 		var addButton = document.getElementById("add-button");
 		var resultText = document.getElementById("result");
-		addButton.onclick = addBtnClick;
-
-		function addBtnClick() {
+		
+		addButton.onclick = function() {
 
 			var x = parseInt(xText.value);
 			var y = parseInt(yText.value);
@@ -68,9 +67,10 @@
 			resultText.value = x + y;
 		}
 	}
+	
 	window.onload = calcApp;
 
-	window.onload = function() {
+	 window.onload = function() {
 		var countButton = document.getElementById("count-button");
 		var countLabel = document.getElementById("count-label");
 		var timerId = null;
@@ -93,14 +93,11 @@
 					timerId = null;
 					}
 				
-				 /* countLabel.textContent = count -1;  */
+				 countLabel.textContent = count -1; 
 				ex1.style.marginTop = (marginTop +1) + "px";
 			}, 30);
 		};
-		
-		
-
-	};
+	}; 
 </script>
 </head>
 <body>
