@@ -20,9 +20,12 @@ public class NoticeView extends Notice {
 	}
 	
 	public NoticeView() {}
-	
-	public NoticeView(String id, String title, String content, String writerId, Date regDate, int hit) {
-		super(id, title, content, writerId, regDate, hit);
+	public NoticeView(String id, String title, String content, String writerId, Date regDate, int hit,
+			String fileName) {
+		super(id, title, content, writerId, regDate, hit, fileName);
+		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 }

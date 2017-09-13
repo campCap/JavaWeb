@@ -146,6 +146,7 @@ public class JdbcNoticeDao implements NoticeDao {
 	            n.setHit(rs.getInt("hit"));
 	            n.setWriterName(rs.getString("writerName"));
 		        n.setCountCmt(rs.getInt("countCmt"));
+		        n.setFileName(rs.getString("fileName"));
 	            //..
 	            
 	         }

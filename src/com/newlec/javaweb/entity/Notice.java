@@ -8,22 +8,34 @@ public class Notice {
    private String writerId;
    private Date regDate;
    private int hit;
+   private String fileName;
    
    public Notice() {
       
    }   
       
-   public Notice(String id, String title, String content, String writerId, Date regDate, int hit) {
-      super();
-      this.id = id;
-      this.title = title;
-      this.content = content;
-      this.writerId = writerId;
-      this.regDate = regDate;
-      this.hit = hit;
-   }
 
-   public String getId() {
+   public Notice(String id, String title, String content, String writerId, Date regDate, int hit, String fileName) {
+	super();
+	this.id = id;
+	this.title = title;
+	this.content = content;
+	this.writerId = writerId;
+	this.regDate = regDate;
+	this.hit = hit;
+	this.fileName = fileName;
+}
+
+
+public String getFileName() {
+	return fileName;
+}
+
+public void setFileName(String fileName) {
+	this.fileName = fileName;
+}
+
+public String getId() {
       return id;
    }
    public void setId(String id) {

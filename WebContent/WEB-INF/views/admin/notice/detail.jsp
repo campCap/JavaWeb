@@ -54,7 +54,9 @@
 		         </tr>
 		         <tr>
 		         	<th>첨부파일</th>
-		         	<td colspan="3"></td>
+		         	<td colspan="3">
+		         		<a download href="../../upload/${d.fileName}">${d.fileName}</a>
+		         	</td>
 		         </tr>   
 		         <tr>
 		         	<th>내용</th>

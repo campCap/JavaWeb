@@ -33,7 +33,7 @@
 					</ol>
 				</div>
 				
-				<form method="post" >
+				<form method="post" enctype="multipart/form-data">
 					 <table class="table">
 		            <tr>
 		               <th>번호</th>
@@ -45,7 +45,9 @@
 		            </tr>
 			         <tr>
 			         	<th>첨부파일</th>
-			         	<td colspan="3"></td>
+			         	<td colspan="3">
+			         		<input type="file"  name="file"/>
+			         	</td>
 			         </tr>   
 			         <tr>
 			         	<th>내용</th>
