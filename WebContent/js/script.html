@@ -11,12 +11,12 @@
 	 alert(json[1].title);
 	 alert(json[1]["title"]);
 	
-	 alert("dfdf")
-	
-	 /* 	var data = eval('({id:"1", title:"hello"})');
-	 alert(data.title); */
-	/* var data = JSON.parse('{"id":"1", "title":"he34545454llo"}');
-	alert(typeof data.title); */
+	 alert("dfdf")*/
+/* 	
+	 var data = eval('({id:"1", title:"hello"})');
+	 alert(data.title); 
+	 var data = JSON.parse('{"id":"1", "title":"he34545454llo"}');
+	alert(typeof data.title);  */
 
 	/* var x = 3;
 	var y = new Number(3);  */
@@ -24,12 +24,12 @@
 
 	// alert(a);  undifined 
 	//{var a=1} 
-	/*  var data = {id:1, title:"hello", writerId:"newlec"};
+/* 	  var data = {id:1, title:"hello", writerId:"newlec"};
 	
 	for(var i in data)
-		alert(data[i]);
+		alert(data[i]); */
 	
-	var add = function(){
+	/*var add = function(){
 		var sum = 0;
 		for(var i=0; i<arguments.length; i++)
 			sum += arguments[i];
@@ -128,9 +128,30 @@
 			win.location.href="http://www.newlecture.com";
 		};
 	}; */
+	onload = function(){
+		var chButton  = document.getElementById("ch-button");
+		var p =document.getElementById("p");
+		chButton.onclick = function(){
+			//p.style.background="blue";
+			//p.style.color="white";
+			//p.firstElementChild.style.color = "white"; 노드 순회 
+			for(var node = p.firstChild; node!=null; node= node.nextSibling)
+				alert(node.nodeName);
+		};
+	};
 </script>
 </head>
 <body>
+	<!-- 노드순회 예제------------------------------ -->
+	<input id="ch-button" type="button" value="배경색 변경"/>
+	<div>
+		<div>1</div>
+		<div id="p">
+			<div>2</div>
+		</div>
+		<div>3</div>
+	</div>	
+	<hr />
 	<!-- timer 예제 ------------------------------ -->
 	
 	<div>
