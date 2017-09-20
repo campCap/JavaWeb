@@ -128,7 +128,8 @@
 			win.location.href="http://www.newlecture.com";
 		};
 	}; */
-	onload = function(){
+	<!-- 노드순회 예제------------------------------ -->
+/* 	onload = function(){
 		var chButton  = document.getElementById("ch-button");
 		var p =document.getElementById("p");
 		chButton.onclick = function(){
@@ -138,10 +139,32 @@
 			for(var node = p.firstChild; node!=null; node= node.nextSibling)
 				alert(node.nodeName);
 		};
+	}; */
+	<!-- 노드순회 예제------------------------------ -->
+	onload = function(){
+		var imgSrcText = document.querySelector(".img-src-text");
+		var chImgButton  = document.querySelector("#ch-img-btn");
+		var imgContainer  = document.querySelector("#img-container");
+		var img = imgContainer.querySelector("img");
+		
+		//var p = document.querySelector("#module1> div:first-child");
+		//var p = divs[1].querySelector("div");
+		
+		chImgButton.onclick = function(){
+			img.src = imgSrcText.value;
+		};
 	};
+	
 </script>
 </head>
 <body>
+	<!-- selector api 예제------------------------------ -->
+	<input type="text" class="img-src-text"/>
+	<input id="ch-img-btn" type="button" value="배경색 변경"/>
+	<div id="img-container">
+		<img alt="" src="http://cfile26.uf.tistory.com/image/26013E4D53F89D7523E398">
+	</div>	
+	<hr />
 	<!-- 노드순회 예제------------------------------ -->
 	<input id="ch-button" type="button" value="배경색 변경"/>
 	<div>
